@@ -3,26 +3,39 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Joseph Koinange | Web Developer & IT Support</title>
+<title>Joseph Koinange | Software Developer & IT Professional</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
 :root {
-    --green: #00ff7f;
-    --dark: #0b0f0c;
-    --card: rgba(255,255,255,0.06);
+    /* NangaNet Colors */
+    --primary-teal: #0AA3A3;
+    --dark-teal: #087A7A;
+    --accent-maroon: #800020;
+    
+    /* Theme Colors */
+    --bg-light: #F4F7F8;
+    --card-bg: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #555555;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #050805, #0d2a17);
-    color: #e6fff3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
 /* HEADER */
@@ -30,137 +43,259 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 15px 25px;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     z-index: 1000;
 }
 
 header h1 {
-    color: var(--green);
-    font-size: 18px;
-    letter-spacing: 1px;
+    color: var(--dark-teal);
+    font-size: 20px;
+    letter-spacing: 0.5px;
 }
 
-header a {
-    color: var(--green);
+header nav a {
+    color: var(--text-main);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.3s;
 }
 
-/* HERO */
+header nav a:hover {
+    color: var(--primary-teal);
+}
+
+/* HERO SECTION */
 .hero {
-    padding: 120px 20px 80px;
+    padding: 140px 20px 80px;
     text-align: center;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
 }
 
 .hero img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 4px solid var(--green);
+    border: 4px solid var(--primary-teal);
     margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(10, 163, 163, 0.2);
 }
 
 .hero h2 {
-    font-size: 34px;
-    margin-bottom: 15px;
+    font-size: 36px;
+    color: var(--dark-teal);
+    margin-bottom: 10px;
+}
+
+.hero h3 {
+    font-size: 20px;
+    color: var(--accent-maroon);
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .hero p {
-    max-width: 700px;
-    margin: auto;
     font-size: 18px;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-.hero .cta {
-    margin-top: 30px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
 }
 
 .btn {
-    background: var(--green);
-    color: #000;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-weight: bold;
+    background: var(--primary-teal);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
     text-decoration: none;
     margin: 10px;
     display: inline-block;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    border: 2px solid var(--primary-teal);
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background: #00cc66;
+    background: var(--dark-teal);
+    border-color: var(--dark-teal);
+    transform: translateY(-2px);
 }
 
-/* SECTIONS */
+.btn-outline {
+    background: transparent;
+    color: var(--primary-teal);
+}
+
+.btn-outline:hover {
+    background: var(--primary-teal);
+    color: #fff;
+}
+
+/* GENERAL SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 70px 20px;
+    padding: 60px 20px;
 }
 
 .section-title {
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 40px;
-    color: var(--green);
+    color: var(--dark-teal);
     text-align: center;
+    position: relative;
 }
 
-/* CARDS */
-.cards {
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--accent-maroon);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* CARDS & GRIDS */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(0,255,127,0.15);
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: transform 0.3s;
+    border-top: 4px solid var(--primary-teal);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .card h3 {
-    color: var(--green);
-    margin-bottom: 12px;
+    color: var(--dark-teal);
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
-/* PROJECTS */
-.project {
-    border-left: 4px solid var(--green);
-    padding-left: 15px;
+.card p {
+    color: var(--text-muted);
+}
+
+/* ABOUT & EDUCATION TEXT */
+.text-block {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-block p {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 17px;
+}
+
+.text-block h4 {
+    color: var(--dark-teal);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.text-block span {
+    color: var(--accent-maroon);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* CONTACT LIST */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.contact-item i {
+    color: var(--primary-teal);
+    font-size: 20px;
+    width: 25px;
+    text-align: center;
+}
+
+.contact-item a {
+    color: var(--dark-teal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: var(--accent-maroon);
+    text-decoration: underline;
 }
 
 /* FOOTER */
 footer {
-    background: #000;
+    background: var(--dark-teal);
+    color: #fff;
     padding: 40px 20px;
     text-align: center;
+    margin-top: 40px;
 }
 
-footer a {
-    color: var(--green);
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #fff;
     margin: 0 12px;
-    font-size: 22px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-teal);
 }
 
 footer p {
-    margin-top: 15px;
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 5px;
 }
 
-@media(max-width:600px){
-    .hero h2 { font-size: 26px; }
+@media(max-width: 768px) {
+    header { flex-direction: column; padding: 15px; }
+    header nav { margin-top: 10px; }
+    header nav a { margin: 0 10px; font-size: 14px; }
+    .hero h2 { font-size: 28px; }
+    .hero h3 { font-size: 18px; }
 }
 </style>
 </head>
@@ -169,92 +304,139 @@ footer p {
 
 <header>
     <h1>Joseph Koinange</h1>
-    <a href="https://wa.me/254110922897">WhatsApp Me</a>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <section class="hero">
     <img src="profile.jpg" alt="Joseph Koinange">
-    <h2>Web Developer & IT Support Specialist</h2>
+    <h2>Joseph Koinange</h2>
+    <h3>Software Developer, IT Professional & Founder of NangaNet</h3>
     <p>
-        I help small businesses, hotels, schools, and service providers
-        build simple websites and systems to manage bookings, sales, and clients reliably and affordably.
+        Bachelor of Science in Computer Information Systems graduate from Kenya Methodist University (KeMU) with experience in software development, IT support, database systems, business process automation, and digital solutions. I enjoy building practical technology solutions that help organizations improve efficiency, manage information, and serve customers better.
     </p>
 
     <div class="cta">
-        <a class="btn" href="https://wa.me/254110922897">Get a Website / System</a>
-        <a class="btn" href="mailto:josephkoinange717@gmail.com">Email Me</a>
+        <a class="btn" href="#projects">View My Projects</a>
+        <a class="btn btn-outline" href="#contact">Contact Me</a>
     </div>
 </section>
 
-<section>
-    <h2 class="section-title">What I Can Do For You</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Business Websites</h3>
-            <p>Modern, mobile-friendly websites that help customers find and contact you easily.</p>
-        </div>
-        <div class="card">
-            <h3>Booking & Admin Systems</h3>
-            <p>Custom systems to manage bookings, customers, inventory, and reports.</p>
-        </div>
-        <div class="card">
-            <h3>POS & IT Support</h3>
-            <p>System setup, troubleshooting, POS support, networks, and maintenance.</p>
-        </div>
-        <div class="card">
-            <h3>Ongoing Support</h3>
-            <p>Monthly maintenance and support to keep your systems running smoothly.</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Selected Projects</h2>
-    <div class="cards">
-        <div class="card project">
-            <h3>Hotel Booking System</h3>
-            <p>
-                Helps small hotels manage reservations, avoid double bookings,
-                and generate basic reports.
-            </p>
-        </div>
-
-        <div class="card project">
-            <h3>Admin Dashboard</h3>
-            <p>
-                Secure dashboard with login, CRUD operations,
-                and summarized reports.
-            </p>
-        </div>
-
-        <div class="card project">
-            <h3>Business Website</h3>
-            <p>
-                Fast, responsive website for service-based businesses
-                with WhatsApp integration.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Experience</h2>
-    <div class="card">
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="text-block">
         <p>
-            Provided IT support, POS troubleshooting, system setup,
-            and maintenance services during internship and after attachment
-            for a hotel and individual clients.
+            I am a software developer and IT professional with hands-on experience developing mobile applications, web applications, backend systems, business management platforms, reporting dashboards, and database-driven solutions.
+        </p>
+        <p>
+            My experience spans Flutter, Java, Python, JavaScript, SQL, Node.js, and business information systems. I am also the founder of <strong>NangaNet</strong>, a technology initiative focused on building practical digital solutions for businesses and organizations.
         </p>
     </div>
 </section>
 
-<footer>
-    <div>
-        <a href="https://github.com/Joenoface"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/joseph-koinange-66222a260/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/joseph_koinange"><i class="fab fa-twitter"></i></a>
+<section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="grid">
+        <div class="card">
+            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+            <p>Python, Dart, Java, JavaScript, SQL, PHP</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-layer-group"></i> Frameworks & Tools</h3>
+            <p>Flutter, Node.js, Express.js, React.js, JavaFX, Streamlit</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-database"></i> Databases</h3>
+            <p>MySQL, Database Design, Data Management</p>
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-network-wired"></i> IT Support</h3>
+            <p>Windows Administration, POS Support, Networking, System Troubleshooting</p>
+        </div>
     </div>
-    <p>© 2025 Joseph Koinange • Web Development & IT Support</p>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Tononoka Service Management Platform</h3>
+            <p>A multi-role service management solution supporting bookings, inventory, customer management, reporting, dispatch operations, and workflow automation using Flutter, Node.js, and MySQL.</p>
+        </div>
+
+        <div class="card">
+            <h3>KRA Tax Intelligence Dashboard</h3>
+            <p>A Python-based analytics dashboard that automates VAT calculations, sales reporting, and business performance monitoring.</p>
+        </div>
+
+        <div class="card">
+            <h3>QR Membership Verification System</h3>
+            <p>A database-driven verification platform using QR technology for member authentication and status validation.</p>
+        </div>
+
+        <div class="card">
+            <h3>Smart Traffic Light System</h3>
+            <p>A Java and OpenCV project implementing traffic monitoring and dynamic traffic control simulations.</p>
+        </div>
+
+        <div class="card">
+            <h3>E-Commerce Mobile Application</h3>
+            <p>A Flutter-based shopping platform featuring product browsing, cart management, and checkout functionality.</p>
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="text-block">
+        <h4>Bachelor of Science in Computer Information Systems</h4>
+        <span>Kenya Methodist University (KeMU)</span>
+        <p>Focused on software development, information systems, databases, networking, and IT management.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-list">
+        <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:0110922897">0110922897</a>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/254110922897" target="_blank">WhatsApp Me</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:josephkoinange717@gmail.com">josephkoinange717@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/Joenoface" target="_blank">github.com/Joenoface</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-globe"></i>
+            <a href="https://joenoface.github.io/index.html" target="_blank">Portfolio Website</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-network-wired"></i>
+            <a href="https://joenoface.github.io/NangaNet/" target="_blank">NangaNet</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/Joenoface" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/joseph-koinange-66222a260/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/joseph_koinange" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>© 2026 Joseph Koinange</p>
+    <p>Software Developer • IT Professional • Founder of NangaNet</p>
 </footer>
 
 </body>
